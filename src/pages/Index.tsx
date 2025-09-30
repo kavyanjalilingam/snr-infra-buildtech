@@ -91,17 +91,19 @@ const Index = () => {
           {/* OUR SERVICES Grid */}
           <div className="mb-8">
             <h3 className="text-xl font-bold text-white mb-4">OUR SERVICES:</h3>
-            <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
               {services.map((service, index) => (
-                <div key={index} className="flex flex-col items-center gap-2 p-3 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/15 transition-all">
-                  <img 
-                    src={service.image} 
-                    alt={service.title}
-                    className="w-16 h-16 object-cover rounded-lg"
-                  />
-                  <div className="text-center">
-                    <p className="text-white font-semibold text-xs leading-tight">{service.title}</p>
+                <div key={index} className="flex flex-col items-center gap-2 hover:scale-105 transition-transform">
+                  <div className="w-20 h-20 rounded-full overflow-hidden bg-white shadow-lg ring-2 ring-white/30">
+                    <img 
+                      src={service.image} 
+                      alt={service.title}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
+                  <p className="text-white font-semibold text-xs text-center leading-tight max-w-[120px] drop-shadow-lg">
+                    {service.title}
+                  </p>
                 </div>
               ))}
             </div>
