@@ -1,16 +1,15 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import PriceBadge from "@/components/PriceBadge";
-import ServiceCard from "@/components/ServiceCard";
 import LeadForm from "@/components/LeadForm";
 import heroBuilding from "@/assets/hero-building.jpg";
+import servicePlans from "@/assets/service-building-plans.jpg";
+import serviceEstimation from "@/assets/service-estimation.jpg";
+import serviceMoneySafety from "@/assets/service-money-safety.jpg";
+import serviceAssistance from "@/assets/service-assistance.jpg";
+import serviceSupervision from "@/assets/service-supervision.jpg";
+import serviceVendor from "@/assets/service-vendor.jpg";
 import {
-  FileText,
-  ClipboardCheck,
-  Shield,
-  Users,
-  HardHat,
-  Handshake,
   Award,
   TrendingUp,
   Clock
@@ -21,57 +20,34 @@ const Index = () => {
 
   const services = [
     {
-      icon: FileText,
+      image: servicePlans,
       title: "Provides Building Plans",
       description: "Professional architectural designs"
     },
     {
-      icon: ClipboardCheck,
+      image: serviceEstimation,
       title: "Provides Project Estimation Report",
       description: "Detailed cost breakdown and timeline"
     },
     {
-      icon: Shield,
+      image: serviceMoneySafety,
       title: "100% Money Safety",
       description: "Your investment is secure"
     },
     {
-      icon: Users,
+      image: serviceAssistance,
       title: "End-to-End Assistance",
       description: "Complete project support"
     },
     {
-      icon: HardHat,
+      image: serviceSupervision,
       title: "Civil Supervision",
       description: "Expert quality monitoring"
     },
     {
-      icon: Handshake,
+      image: serviceVendor,
       title: "Vendor Coordination",
       description: "Seamless vendor management"
-    }
-  ];
-
-  const highlights = [
-    {
-      icon: Award,
-      title: "High Rental Yield",
-      subtitle: "Maximize your rental income"
-    },
-    {
-      icon: TrendingUp,
-      title: "Maximum Units",
-      subtitle: "Optimize space utilization"
-    },
-    {
-      icon: Shield,
-      title: "100% Money Safety",
-      subtitle: "Your investment is secure"
-    },
-    {
-      icon: Users,
-      title: "End-to-End Assistance",
-      subtitle: "Complete project support"
     }
   ];
 
@@ -112,17 +88,23 @@ const Index = () => {
             <PriceBadge price="₹1,799 / sqft" className="mb-8" />
           </div>
 
-          {/* Highlights Row */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
-            {highlights.map((highlight, index) => (
-              <div key={index} className="flex items-center gap-3 p-4 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20">
-                <highlight.icon className="w-8 h-8 text-accent flex-shrink-0" />
-                <div>
-                  <p className="text-white font-semibold text-sm">{highlight.title}</p>
-                  <p className="text-white/70 text-xs">{highlight.subtitle}</p>
+          {/* OUR SERVICES Grid */}
+          <div className="mb-8">
+            <h3 className="text-xl font-bold text-white mb-4">OUR SERVICES:</h3>
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
+              {services.map((service, index) => (
+                <div key={index} className="flex flex-col items-center gap-2 p-3 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/15 transition-all">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-16 h-16 object-cover rounded-lg"
+                  />
+                  <div className="text-center">
+                    <p className="text-white font-semibold text-xs leading-tight">{service.title}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
           {/* CTA Button */}
@@ -136,43 +118,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">
-            OUR SERVICES
-          </h2>
-          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-            End-to-End Project Management • Civil Supervision • Vendor Coordination
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, index) => (
-              <ServiceCard
-                key={index}
-                icon={service.icon}
-                title={service.title}
-                description={service.description}
-              />
-            ))}
-          </div>
-
-          <div className="text-center mt-8">
-            <button
-              onClick={() => {
-                const servicesSection = document.getElementById('why-choose-us');
-                servicesSection?.scrollIntoView({ behavior: 'smooth' });
-              }}
-              className="text-primary hover:underline text-sm"
-            >
-              View services →
-            </button>
-          </div>
-        </div>
-      </section>
-
       {/* Why Choose Us Section */}
-      <section id="why-choose-us" className="py-16 px-4 sm:px-6 lg:px-8">
+      <section id="why-choose-us" className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">
             WHY CHOOSE US?
