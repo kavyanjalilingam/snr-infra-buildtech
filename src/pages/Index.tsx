@@ -9,6 +9,7 @@ import serviceMoneySafety from "@/assets/service-money-safety.jpg";
 import serviceAssistance from "@/assets/service-assistance.jpg";
 import serviceSupervision from "@/assets/service-supervision.jpg";
 import serviceVendor from "@/assets/service-vendor.jpg";
+import serviceLabour from "@/assets/service-labour.jpg";
 import {
   Award,
   TrendingUp,
@@ -28,6 +29,11 @@ const Index = () => {
       image: serviceEstimation,
       title: "Provides Project Estimation Report",
       description: "Detailed cost breakdown and timeline"
+    },
+    {
+      image: serviceLabour,
+      title: "10+ Years Skilled Labour Providence",
+      description: "Experienced workforce"
     },
     {
       image: serviceSupervision,
@@ -63,39 +69,34 @@ const Index = () => {
 
         {/* Content */}
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          {/* Logo & Tagline - Increased Size */}
-          <div className="mb-4">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-2">
+          {/* Logo & Tagline */}
+          <div className="mb-3">
+            <h1 className="text-3xl sm:text-4xl font-bold text-white mb-1">
               SNR Infra BuildTech
             </h1>
-            <p className="text-white/90 text-lg sm:text-xl lg:text-2xl">
+            <p className="text-white/90 text-base sm:text-lg">
               Built on Trust, Rooted in Quality
             </p>
           </div>
 
-          {/* Mobile Number */}
-          <p className="text-white/80 text-sm mb-4">
-            📞 +91 7569408577
-          </p>
-
-          {/* Main Headline - Reduced Size */}
-          <div className="mb-4">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white leading-tight mb-2">
+          {/* Main Headline */}
+          <div className="mb-3">
+            <h2 className="text-xl sm:text-2xl font-bold text-white leading-tight mb-2">
               CONSTRUCT YOUR RENTAL PROPERTY
             </h2>
-            <p className="text-lg sm:text-xl text-white/90 mb-4">
+            <p className="text-base sm:text-lg text-white/90 mb-3">
               in <span className="font-bold text-accent">9 Months</span> at <span className="text-accent font-bold">Unbeatable Rates!</span>
             </p>
-            <PriceBadge price="₹1,799 / sqft" className="mb-6" />
+            <PriceBadge price="₹1,799 / sqft" className="mb-4" />
           </div>
 
           {/* OUR SERVICES Grid */}
-          <div className="mb-6">
-            <h3 className="text-xl font-bold text-white mb-4">OUR SERVICES</h3>
-            <div className="grid grid-cols-3 gap-4 mb-6">
+          <div className="mb-4">
+            <h3 className="text-lg font-bold text-white mb-3">OUR SERVICES</h3>
+            <div className="grid grid-cols-2 gap-3 mb-4">
               {services.map((service, index) => (
                 <div key={index} className="flex flex-col items-center gap-2 hover:scale-105 transition-transform">
-                  <div className="w-20 h-20 rounded-full overflow-hidden bg-white shadow-lg ring-2 ring-white/30">
+                  <div className="w-16 h-16 rounded-full overflow-hidden bg-white shadow-lg ring-2 ring-white/30">
                     <img 
                       src={service.image} 
                       alt={service.title}
@@ -110,20 +111,20 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Why Choose Us - Inline */}
-          <div className="mb-6 bg-card/20 backdrop-blur-sm rounded-xl p-4 border border-white/10">
-            <h3 className="text-lg font-bold text-white mb-3 text-center">WHY CHOOSE US</h3>
-            <div className="space-y-2 text-white/90 text-sm">
+          {/* Why Choose Us - Compact */}
+          <div className="mb-4 bg-card/20 backdrop-blur-sm rounded-xl p-3 border border-white/10">
+            <h3 className="text-base font-bold text-white mb-2 text-center">WHY CHOOSE US</h3>
+            <div className="space-y-1.5 text-white/90 text-xs">
               <p className="flex items-center gap-2">
-                <Award className="w-4 h-4 text-accent" />
+                <Award className="w-3.5 h-3.5 text-accent" />
                 Professional Expertise
               </p>
               <p className="flex items-center gap-2">
-                <TrendingUp className="w-4 h-4 text-accent" />
+                <TrendingUp className="w-3.5 h-3.5 text-accent" />
                 Transparent Reporting
               </p>
               <p className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-accent" />
+                <Clock className="w-3.5 h-3.5 text-accent" />
                 Cost & Time Efficiency
               </p>
             </div>
@@ -133,68 +134,13 @@ const Index = () => {
           <Button
             onClick={() => setFormOpen(true)}
             size="lg"
-            className="btn-gradient text-xl px-12 py-6 h-auto font-bold hover:scale-105 transition-transform w-full"
+            className="btn-gradient text-lg px-10 py-5 h-auto font-bold hover:scale-105 transition-transform w-full"
           >
             GET QUOTE
           </Button>
         </div>
       </section>
 
-      {/* Why Choose Us Section - Hidden on mobile, shown on larger screens */}
-      <section id="why-choose-us" className="hidden lg:block py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">
-            WHY CHOOSE US?
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <div className="text-center p-6 rounded-xl card-elegant bg-card">
-              <Award className="w-12 h-12 text-primary mx-auto mb-4" />
-              <h3 className="font-bold text-xl mb-2">Professional Expertise</h3>
-              <p className="text-muted-foreground">
-                Years of experience in construction management
-              </p>
-            </div>
-            <div className="text-center p-6 rounded-xl card-elegant bg-card">
-              <TrendingUp className="w-12 h-12 text-primary mx-auto mb-4" />
-              <h3 className="font-bold text-xl mb-2">Transparent Reporting</h3>
-              <p className="text-muted-foreground">
-                Clear communication at every project stage
-              </p>
-            </div>
-            <div className="text-center p-6 rounded-xl card-elegant bg-card">
-              <Clock className="w-12 h-12 text-primary mx-auto mb-4" />
-              <h3 className="font-bold text-xl mb-2">Cost & Time Efficiency</h3>
-              <p className="text-muted-foreground">
-                Deliver on time, within budget
-              </p>
-            </div>
-          </div>
-
-          {/* Final CTA */}
-          <div className="text-center">
-            <Button
-              onClick={() => setFormOpen(true)}
-              size="lg"
-              className="btn-gradient text-xl px-12 py-6 h-auto font-bold hover:scale-105 transition-transform"
-            >
-              GET QUOTE
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-foreground text-background py-6 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <h3 className="text-xl font-bold mb-1">SNR Infra BuildTech</h3>
-          <p className="text-xs mb-2">Built on Trust, Rooted in Quality</p>
-          <p className="text-xs mb-2">📞 +91 7569408577</p>
-          <p className="text-xs opacity-70">
-            © {new Date().getFullYear()} SNR Infra BuildTech — All rights reserved.
-          </p>
-        </div>
-      </footer>
 
       {/* Lead Form Modal */}
       <LeadForm open={formOpen} onOpenChange={setFormOpen} />
