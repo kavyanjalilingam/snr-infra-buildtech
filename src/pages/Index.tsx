@@ -71,19 +71,18 @@ const Index = () => {
         <div className="relative z-10 w-full h-full flex items-center px-4 py-6">
           <div className="w-full max-w-md">
             {/* Logo & Tagline */}
-            <div className="mb-4">
-              <h1 className="text-2xl font-bold text-white mb-0.5">
-                SNR Infra BuildTech
+            <div className="absolute top-6 left-1/2 -translate-x-1/2 text-center z-20">
+              <h1 className="text-3xl md:text-5xl font-extrabold text-white drop-shadow-lg tracking-wide">
+                SNR INFRA BUILDTECH
               </h1>
-              <p className="text-white/90 text-xs">
+              <p className="text-white/90 text-base md:text-lg mt-1 font-medium tracking-tight">
                 Built on Trust, Rooted in Quality
               </p>
             </div>
-
             {/* Main Headline */}
             <div className="mb-4">
               <h2 className="text-base font-bold text-white leading-tight mb-1">
-                CONSTRUCT YOUR RENTAL PROPERTY
+                We Build Your Dream Home
               </h2>
               <p className="text-sm text-white/90 mb-2">
                 in <span className="font-bold text-accent">9 Months</span> at <span className="text-accent font-bold">Unbeatable Rates!</span>
