@@ -30,24 +30,9 @@ const Index = () => {
       description: "Detailed cost breakdown and timeline"
     },
     {
-      image: serviceMoneySafety,
-      title: "100% Money Safety",
-      description: "Your investment is secure"
-    },
-    {
-      image: serviceAssistance,
-      title: "End-to-End Assistance",
-      description: "Complete project support"
-    },
-    {
       image: serviceSupervision,
       title: "Civil Supervision",
       description: "Expert quality monitoring"
-    },
-    {
-      image: serviceVendor,
-      title: "Vendor Coordination",
-      description: "Seamless vendor management"
     }
   ];
 
@@ -65,33 +50,49 @@ const Index = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-[hsl(220_25%_10%_/_0.95)] via-[hsl(220_25%_10%_/_0.85)] to-transparent"></div>
         </div>
 
+        {/* Call Button - Top Right */}
+        <a 
+          href="tel:+917569408577"
+          className="absolute top-4 right-4 z-20 flex items-center gap-2 px-4 py-2 bg-accent text-accent-foreground rounded-full font-semibold shadow-lg hover:scale-105 transition-transform"
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.494 4.483a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+          </svg>
+          Call
+        </a>
+
         {/* Content */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          {/* Logo & Tagline */}
-          <div className="mb-8">
-            <h1 className="text-3xl sm:text-4xl font-bold text-white mb-2">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          {/* Logo & Tagline - Increased Size */}
+          <div className="mb-4">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-2">
               SNR Infra BuildTech
             </h1>
-            <p className="text-white/90 text-sm sm:text-base">
+            <p className="text-white/90 text-lg sm:text-xl lg:text-2xl">
               Built on Trust, Rooted in Quality
             </p>
           </div>
 
-          {/* Main Headline */}
-          <div className="mb-6">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">
-              CONSTRUCT YOUR<br />RENTAL PROPERTY
+          {/* Mobile Number */}
+          <p className="text-white/80 text-sm mb-4">
+            📞 +91 7569408577
+          </p>
+
+          {/* Main Headline - Reduced Size */}
+          <div className="mb-4">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white leading-tight mb-2">
+              CONSTRUCT YOUR RENTAL PROPERTY
             </h2>
-            <p className="text-xl sm:text-2xl text-white/90 mb-6">
-              in <span className="font-bold">9 Months</span> at <span className="text-accent font-bold">Unbeatable Rates!</span>
+            <p className="text-lg sm:text-xl text-white/90 mb-4">
+              in <span className="font-bold text-accent">9 Months</span> at <span className="text-accent font-bold">Unbeatable Rates!</span>
             </p>
-            <PriceBadge price="₹1,799 / sqft" className="mb-8" />
+            <PriceBadge price="₹1,799 / sqft" className="mb-6" />
           </div>
 
           {/* OUR SERVICES Grid */}
-          <div className="mb-8">
-            <h3 className="text-xl font-bold text-white mb-4">OUR SERVICES:</h3>
-            <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="mb-6">
+            <h3 className="text-xl font-bold text-white mb-4">OUR SERVICES</h3>
+            <div className="grid grid-cols-3 gap-4 mb-6">
               {services.map((service, index) => (
                 <div key={index} className="flex flex-col items-center gap-2 hover:scale-105 transition-transform">
                   <div className="w-20 h-20 rounded-full overflow-hidden bg-white shadow-lg ring-2 ring-white/30">
@@ -109,19 +110,38 @@ const Index = () => {
             </div>
           </div>
 
+          {/* Why Choose Us - Inline */}
+          <div className="mb-6 bg-card/20 backdrop-blur-sm rounded-xl p-4 border border-white/10">
+            <h3 className="text-lg font-bold text-white mb-3 text-center">WHY CHOOSE US</h3>
+            <div className="space-y-2 text-white/90 text-sm">
+              <p className="flex items-center gap-2">
+                <Award className="w-4 h-4 text-accent" />
+                Professional Expertise
+              </p>
+              <p className="flex items-center gap-2">
+                <TrendingUp className="w-4 h-4 text-accent" />
+                Transparent Reporting
+              </p>
+              <p className="flex items-center gap-2">
+                <Clock className="w-4 h-4 text-accent" />
+                Cost & Time Efficiency
+              </p>
+            </div>
+          </div>
+
           {/* CTA Button */}
           <Button
             onClick={() => setFormOpen(true)}
             size="lg"
-            className="btn-gradient text-xl px-12 py-6 h-auto font-bold hover:scale-105 transition-transform"
+            className="btn-gradient text-xl px-12 py-6 h-auto font-bold hover:scale-105 transition-transform w-full"
           >
             GET QUOTE
           </Button>
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
-      <section id="why-choose-us" className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
+      {/* Why Choose Us Section - Hidden on mobile, shown on larger screens */}
+      <section id="why-choose-us" className="hidden lg:block py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">
             WHY CHOOSE US?
@@ -165,10 +185,11 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-foreground text-background py-8 px-4 sm:px-6 lg:px-8">
+      <footer className="bg-foreground text-background py-6 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <h3 className="text-2xl font-bold mb-2">SNR Infra BuildTech</h3>
-          <p className="text-sm mb-4">Built on Trust, Rooted in Quality</p>
+          <h3 className="text-xl font-bold mb-1">SNR Infra BuildTech</h3>
+          <p className="text-xs mb-2">Built on Trust, Rooted in Quality</p>
+          <p className="text-xs mb-2">📞 +91 7569408577</p>
           <p className="text-xs opacity-70">
             © {new Date().getFullYear()} SNR Infra BuildTech — All rights reserved.
           </p>
