@@ -91,9 +91,9 @@ const Index = () => {
               <PriceBadge price="₹1,799 / sqft" className="mb-3" />
             </div>
 
-            {/* Why Choose Us - Left Aligned & Compact */}
-            <div className="mb-4">
-              <h3 className="text-sm font-bold text-white mb-2 text-left">WHY CHOOSE US</h3>
+            {/* OUR SERVICES - Left Aligned & Compact */}
+            <div className="mb-3">
+              <h3 className="text-sm font-bold text-white mb-2 text-left">OUR SERVICES</h3>
               <div className="space-y-2 text-white/90 text-xs">
                 {services.map((service, index) => (
                   <div key={index} className="flex items-center gap-2">
@@ -109,6 +109,13 @@ const Index = () => {
                     </p>
                   </div>
                 ))}
+              </div>
+            </div>
+
+            {/* Why Choose Us - Left Aligned & Compact */}
+            <div className="mb-4">
+              <h3 className="text-sm font-bold text-white mb-2 text-left">WHY CHOOSE US</h3>
+              <div className="space-y-2 text-white/90 text-xs">
                 <div className="flex items-center gap-2">
                   <Award className="w-8 h-8 text-accent flex-shrink-0 p-1.5 bg-white/10 rounded-full" />
                   <p className="text-white font-medium text-xs leading-tight">Professional Expertise</p>
