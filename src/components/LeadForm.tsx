@@ -84,25 +84,55 @@ const LeadForm = ({ open, onOpenChange }: LeadFormProps) => {
       });
     }
   };
+const handleSubmit = async () => {
+  if (!formData.name || !formData.phone || !formData.plotOwnership || !formData.city || !formData.budget) {
+    toast({
+      title: "Please complete all required fields",
+      variant: "destructive",
+    });
+    return;
+  }
 
-  const handleSubmit = async () => {
-    console.log("Form submitted:", {
-      ...formData,
-      utm_source: "instagram",
-      utm_campaign: "rental_property_ad",
-      timestamp: new Date().toISOString()
+  const dataToSend = {
+    name: formData.name,
+    phone: formData.phone,
+    email: formData.email || "",
+    plotOwnership: formData.plotOwnership === "yes" ? "I own a plot" : "Planning to buy",
+    city: formData.city,
+    budgetRange: formData.budget,
+    priceReference: "₹1,799 / sqft", // you can calculate dynamically if needed
+  };
+
+  try {
+    const response = await fetch("/api/submitLead", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(dataToSend),
     });
 
-    // TODO: Replace with actual webhook URL
-    // const webhookUrl = "YOUR_CRM_WEBHOOK_URL";
-    // await fetch(webhookUrl, {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify({ ...formData, utm_source: "instagram" })
-    // });
+    const result = await response.json();
 
-    setSubmitted(true);
-  };
+    if (result.success) {
+      toast({
+        title: "Lead submitted successfully!",
+        variant: "default",
+      });
+      setSubmitted(true);
+    } else {
+      toast({
+        title: "Something went wrong. Please try again.",
+        variant: "destructive",
+      });
+    }
+  } catch (error) {
+    console.error(error);
+    toast({
+      title: "Server error. Please try again later.",
+      variant: "destructive",
+    });
+  }
+};
+
 
   const handleClose = () => {
     setStep(1);
